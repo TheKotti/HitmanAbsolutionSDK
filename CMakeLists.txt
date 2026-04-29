@@ -1,6 +1,6 @@
 ﻿cmake_minimum_required(VERSION 3.8)
 
-project("HitmanAbsolutionSDK" C CXX)
+project("HitmanAbsolutionSDK" CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 set(GAME_INSTALL_PATH "" CACHE PATH "Path of Hitman Absolution folder.")
@@ -27,6 +27,7 @@ set(MODS
 	HUD
 	HUDPersist
 	Camera
+	LevelTimer
 )
 
 foreach(MOD IN LISTS MODS)
