@@ -68,9 +68,10 @@ void LevelTimer::OnDrawUI(bool hasFocus)
     int minutes = static_cast<int>(m_elapsedSeconds) / 60;
     int seconds = static_cast<int>(m_elapsedSeconds) % 60;
 
-    ImGui::SetNextWindowPos(ImVec2(300, 5), ImGuiCond_Always);
+    auto& io = ImGui::GetIO();
+    ImGui::SetNextWindowPos(ImVec2(io.DisplaySize.x * 0.25f, io.DisplaySize.y * 0.012f), ImGuiCond_Always);
     ImGui::Begin("Timer", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoBackground);
-    ImGui::SetWindowFontScale(4.0f);
+    ImGui::SetWindowFontScale(3.5f);
     ImGui::Text("%02d:%02d", minutes, seconds);
     ImGui::End();
 }
